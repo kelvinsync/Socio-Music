@@ -11,6 +11,16 @@ a {
   text-decoration: none;
 }
 
+.header-imghome {
+  background: url("coffeehome.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
 .header-img {
   background: url("coffeeshop.jpg");
   background-repeat: no-repeat;
@@ -21,13 +31,128 @@ a {
   overflow-y: hidden !important;
 }
 
-
 .container-header {
-  padding: 50px;
+  margin-left: 100px;
+}
+
+.container-header .header-nav {
+  margin-top: 80px;
   display: flex;
+  justify-content: space-between;
+}
+
+.container-header .header-nav h2 {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+}
+
+.container-header .header-nav .header-list {
+  margin-right: 100px;
+}
+
+.container-header .header-nav .header-list ul {
+  display: flex;
+  transition: 0.8s;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+}
+
+.container-header .header-nav .header-list li {
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.container-header .header-nav .header-list a {
   color: white;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  transition: 0.8s;
+}
+
+.container-header .header-nav .header-list a:hover {
+  color: #5a4cec;
+}
+
+.container-header .header-nav .header-list input {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+  margin-top: -20px;
+  margin-left: 50px;
+  background: transparent;
+  width: 150px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.90s;
+}
+
+
+.container-header .header-nav .header-list input:hover {
+  border: 2px solid #443ab4;
+  color: white;
+  background: #443ab4;
+}
+
+.container-header .img-texts {
+  display: block;
+  align-items: flex-start;
+  margin-top: 180px;
+}
+
+.container-header .img-texts h1 {
+  font-size: 200px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+}
+
+.container-header .img-texts h2 {
+  margin-top: 50px;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+}
+
+.container-header .img-texts p {
+  margin-top: 20px;
+  font-size: 28px;
+  line-height: 1;
+  font-family: "Roboto Slab", serif;
+  color: #eeece3;
+}
+
+.container-header .img-texts input {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+  background: transparent;
+  border: 2px solid white;
+  margin-top: 28px;
+  width: 350px;
+  height: 80px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.90s;
+}
+
+.container-header .img-texts input:hover {
+  border: 2px solid #443ab4;
+  color: white;
+  background: #443ab4;
 }
 
 
@@ -41,14 +166,15 @@ a {
 
 .header-register {
     background-color: hsl(245, 81%, 61%, 50%);
-    display: block;
-    align-items: flex-end;
+    display: inline-block;
+    align-items: center;
     border-radius: 20px;
-    padding: 70px;
+    padding: 50px;
+    justify-content: space-between;
+    width: 25%
   }
 
-  .header-register h1 {
-    font-size: 200px;
+  .header-register h2 {
     line-height: 1;
     font-weight: bold;
     font-family: "Roboto Mono", monospace;
