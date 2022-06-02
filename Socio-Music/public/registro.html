@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Registrar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="./js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="CSS/cookie.css">
+</head>
+<body>
+<section class="header-img">
+<header class="container-header">
+        <div class="header-nav">
+        <h2>Socio-Music</h2>
+        <nav class="header-list">
+            <ul>
+                <li><a href="socio.html">Inicio</a></li>
+                <li><a href="socio.html #main">Estrutura</a></li>
+                <li><a href="socio.html #main2">Galeria</a></li>
+                <li><a href="socio.html #footer">Contato</a></li> 
+                <li><a href="login.html"> <input class="button-h" type="button" value="Login"> </a>
+                    <a href="registro.html"> <input class="button-h" type="button" value="Cadastrar">
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+    
+        <div class="header-register">
+            <h1><h2>Cadastrar sua Conta</h2></h1>
+            <p>Nome: <input type="text" id="nome"></p>
+            <p>Email: <input type="text" id="email"></p>
+            <p>Senha: <input type="password" id="senha"></p>
+            <p>Confirmar Senha: <input type="password" id="confirmarSenha"></p>
+            <a href="#main"><input onclick="cadastrar()" class="button-h2" type="button" value="Cadastrar!"></a>
+        </div>
+        
+         
+        
+</header>
+</section>
+</body>
+</html>
+<script>
+    function cadastrar() {
+
+        var nomeVar = nome.value;
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+        var confirmarSenhaVar = confirmarSenha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            alert('Por Favor preencha todos os campos de Registro!');
+
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify ({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (respota.ok) {
+                alert('Cadastro realizado com sucesso! Seja bem vindo!')
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+
+            } else { 
+                alert("Ocorreu um erro ao efetuar o cadastro");
+            }
+        }).catch (function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;  
+    }
+
+</script>
