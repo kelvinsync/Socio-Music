@@ -1,6 +1,15 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #5a4cec;
+}
+
+
+
 body, main, footer, p, h1, ul, li {
   padding: 0px;
   margin: 0px;
+
 }
 
 ul {
@@ -26,7 +35,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  height: 110vh;
+  height: 115vh;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
 }
@@ -153,6 +162,14 @@ a {
   border: 2px solid #443ab4;
   color: white;
   background: #443ab4;
+}
+
+.container-header .img-text2 {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
 }
 
 
@@ -342,7 +359,7 @@ a {
   font-weight: bold;
   font-family: "Roboto Mono", monospace;
   color: #eeece3;
-  margin-top: 60px;
+  margin-top: 50px;
   border-top: 2px solid #7b7bb3;
 }
 
@@ -447,6 +464,52 @@ a {
   overflow-y: hidden !important;
 }
 
+.container-image-perfil {
+  font-family: "Roboto Slab", serif;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(31, 26, 86, 0.576);
+  flex-wrap: nowrap;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  width: 47%;
+  height: 470px;
+  border-radius: 20px;
+}
+
+.container-image-home {
+  font-family: "Roboto Slab", serif;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(31, 26, 86, 0.576);
+  flex-wrap: nowrap;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  width: 47%;
+  height: 240px;
+  border-radius: 20px;
+  line-height: 1;
+}
+
+.container-image-home .p {
+  font-family: "Roboto Slab";
+}
+
+.cadastrar-musicas {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(31, 26, 86, 0.576);
+  flex-wrap: nowrap;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  width: 47%;
+  height: 50px;
+  border-radius: 20px;
+  line-height: 1;
+}
 
 
 .together {
@@ -458,6 +521,18 @@ a {
 .img-text {
   min-width: 200px;
 }
+
+.img-text h4, p {
+  display: flex;
+  justify-content: space-between;
+  height: 1%;
+  padding: 30px 30px 0 30px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  color: #eeece3;
+}
+
 
 .img-text h3 {
   display: flex;
@@ -471,6 +546,7 @@ a {
   font-weight: bold;
   font-family: "Roboto Mono", monospace;
   color: #eeece3;
+  border-radius: 25px;
 }
 
 .img-text sup {
