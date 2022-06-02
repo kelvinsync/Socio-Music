@@ -24,31 +24,49 @@
                 </div>
 
                 <div class="container-image-home"> 
-                    <div class="img-text">
+                    <div class="img-text2">
                         <p>Seja Bem vindo ao Socio-Music!! </p> 
-                        <p>Agora você terá que digitar os seus gostos musicais preferidos</p>
-                        <p>Após digitar e selecionar todos seus estilos musicais </p>
+                        <p>Agora você terá que digitar os seus gostos</p> <p>musicais preferidos</p>
                         <p>OBS:</p>
-                        <p>Digita e clique no botão para adicionar</p>
-                        <p>Clique no botão SALVAR para salvar no seu Perfil!</p>
+                        <p>Digita e clique no botão ADICIONAR para </p> <p>adicionar</p>
+                        <p>Clique no botão SALVAR para salvar no seu</p> <p>Perfil!</p>
                         </div>
                     </ul>
                     </div>
-
                 <div class="cadastrar-musicas">
-                    <h2> </h2>
+                    <h3>Digite seu estilo musical: </h3> <input id="musica" type="text">
                 </div>
-                <br><br>
-            
-                    
-
-                </div>
-
-        
-                
+                <input onclick="adicionar()" class="button-h" type="button" value="ADICIONAR">
+                <input onclick="salvar()" class="button-h" type="button" value="SALVAR">
+                </div>     
         </header>
         </section>
 
+        <div class="container-main-home" id="main">
+
+            <div class="main-flex-home">
+                <div class="main-text-home">
+                <h2>Informações</h2>
+                </div>
+        
+                <div class="main-info-home">
+                <p><span>01/01</span>Informações</p>
+                </div>
+            </div>
+
+            <section class="card-list">
+                <div class="card pc">
+                <p id="informações1"></p>
+                </div>
+        
+                <div class="card coffee">
+                <p id="informacoes2"></p>
+                </div>
+        
+                <div class="card library">
+                <p id="informacoes3"></p>
+                </div>
+            </section>
 
 
 
@@ -62,6 +80,13 @@
 
 
 
+
+
+
+
+
+
+        </div>
         <footer class="container-footer" id="footer">
             <div class="footer-text">
                 <h2>@Kelvin G. Gomes</h2>
@@ -76,11 +101,27 @@
             </ul>
             </nav>
         
-            <section class="newsletter">
-            <form class="newsletter-form">
-                <input type="text" placeholder="Seu e-mail"><button type="submit">></button>
-            </form>
-        </section>
         </footer>
 </body>
 </html>
+<script>
+    var vt_musicas = [];
+
+    function adicionar() {
+    var addMusica = musica.value;
+        vt_musicas.push(addMusica);
+        musica.value = '';
+    }
+
+    function salvar() {
+
+    if (vt_musicas.length < 1) {
+    alert('Adiciona algum estilo musical antes de salvar!')
+    }
+    else {
+        for (var i = vt_musicas.length; i > 0; i--) {
+            vt_musicas.pop();
+        }
+    }
+    }
+</script>
