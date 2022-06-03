@@ -4,11 +4,11 @@ process.env.AMBIENTE_PROCESSO = "desenvolvimento";
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
-var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3330 : 8080;
+var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 
 var app = express();
 
-var indexRouter = require("./src/routes/socio");
+var socioRouter = require("./src/routes/socio");
 var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-app.use("/", indexRouter);
+app.use("/", socioRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter)

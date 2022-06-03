@@ -1,51 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <title>Registrar</title>
+    <title>Meu Perfil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="./js/funcoes.js"></script>
-    <script src="./js/login.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="./js/login.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@300&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="CSS/cookie.css">
+    <link rel="stylesheet" type="text/css" href="css/cookie2.css">
 </head>
 
 <body>
-    <section class="header-img">
+    <section class="header-imgdash">
         <header class="container-header">
             <div class="header-nav">
                 <h2>Socio-Music</h2>
                 <nav class="header-list">
                     <ul>
-                        <li><a href="socio.html">Inicio</a></li>
-                        <li><a href="socio.html #main">Estrutura</a></li>
-                        <li><a href="socio.html #main2">Galeria</a></li>
-                        <li><a href="socio.html #footer">Contato</a></li>
-                        <li><a href="login.html"> <input class="button-h" type="button" value="Login"> </a>
-                            <a href="registro.html"> <input class="button-h" type="button" value="Cadastrar">
-                            </a>
-                        </li>
-                    </ul>
+                        <li><a href="home.html">Inicial</a></li>
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="socio.html"> <input onclick="sair()" class="button-h" type="button" value="Sair"> </a>
+                            </a></li>
                 </nav>
             </div>
 
-            <div class="header-register">
-                <h1>
-                    <h2>Cadastrar sua Conta</h2>
-                </h1>
-                <p>Nome: <input type="text" id="nome"></p>
-                <p>Email: <input type="text" id="email"></p>
-                <p>Senha: <input type="password" id="senha"></p>
-                <p>Confirmar Senha: <input type="password" id="confirmarSenha"></p>
-                <a><input onclick="cadastrar()" class="button-h2" type="button" value="Cadastrar!"></a>
+            <div class="container-image-perfil">
+                <div class="img-text">
+                    <h3>Nome: <br><br>Kelvin Guimaraes<sup>São Paulo</sup></h3>
+                    <h4 class="sobre" style="color:white ;">Estilos Musicais:</h4>
+                    <p>Dubstep, Eletronica, Funk</p>
+                    <h4 class="sobre" style="color:white ;">Nasceu:</h4>
+                    <p>2002</p>
+
+
+                </div>
+
             </div>
-
-
+            </ul>
 
         </header>
     </section>
@@ -67,7 +62,10 @@
             </ul>
         </nav>
 
+
     </footer>
+
+
 </body>
 
 </html>

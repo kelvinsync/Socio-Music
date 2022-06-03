@@ -12,3 +12,10 @@ CREATE TABLE usuario (
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
+
+CREATE TABLE estilo (
+	fkId INT 
+	FOREIGN KEY (fkId) REFERENCES usuario (id),
+	idEstilo INT PRIMARY KEY AUTO_INCREMENT,
+	genero VARCHAR(40)
+);

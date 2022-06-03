@@ -29,9 +29,9 @@ function entrar(req, res) {
     var senha = req.body.senhaServer;
 
     if (email == undefined) {
-        res.status(400).send("Seu email não está registrado!");
+        res.status(400).send("Seu email não tá definido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha não está registrado!");
+        res.status(400).send("Sua senha não tá definida!");
     } else {
         
         usuarioModel.entrar(email, senha)
@@ -44,7 +44,7 @@ function entrar(req, res) {
                         console.log(resultado);
                         res.json(resultado[0]);
                     } else if (resultado.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
+                        res.status(403).send("Email e/ou Senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                     }
@@ -72,7 +72,7 @@ function cadastrar(req, res) {
     } else if (email == undefined) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinido!");
+        res.status(400).send("Sua senha está indefinida!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
@@ -94,9 +94,38 @@ function cadastrar(req, res) {
     }
 }
 
+function cadastrar_estilo(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var estilo = req.body.estiloServer;
+
+    // Faça as validações dos valores
+    if (estilo == undefined) {
+        res.status(400).send("Seu nome está indefinido!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar_estilo(estilo)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrar_estilo,
     listar,
     testar
 }

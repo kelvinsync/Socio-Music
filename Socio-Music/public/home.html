@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./js/login.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&family=Roboto+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/cookie2.css">
+</head>
+
+<body>
+    <section class="header-imgdash">
+        <header class="container-header">
+            <div class="header-nav">
+                <h2>Socio-Music</h2>
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="home.html">Inicial</a></li>
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="socio.html"> <input onclick="sair()" class="button-h" type="button" value="Sair"> </a>
+                            </a></li>
+                </nav>
+            </div>
+
+            <div class="container-image-home">
+                <div class="img-text2">
+                    <p>Seja Bem vindo ao Socio-Music!! </p>
+                    <p>Agora você terá que digitar os seus gostos</p>
+                    <p>musicais preferidos.</p>
+                    <p>OBS:</p>
+                    <p>Digita e clique no botão ADICIONAR para </p>
+                    <p>adicionar a sua lista de genero.</p>
+                    <p>Clique no limpar para limpar sua lista.</p>
+                    <p>Clique no botão SALVAR para salvar o ultimo</p>
+                    <p>estilo inserido no seu Perfil!</p>
+                </div>
+                </ul>
+            </div>
+            <div class="cadastrar-musicas">
+                <h3>Digite seu estilo musical: </h3> <input id="musica" type="text">
+            </div>
+            <input onclick="adicionar()" class="button-h" type="button" value="ADICIONAR">
+            <input onclick="limpar()" class="button-h" type="button" value="LIMPAR">
+            <input onclick="cadastrar_estilo()" class="button-h" type="button" value="SALVAR">
+            </div>
+        </header>
+    </section>
+
+    <div class="container-main-home" id="main">
+
+        <div class="main-flex-home">
+            <div class="main-text-home">
+                <h2>Informações</h2>
+            </div>
+
+            <div class="main-info-home">
+                <p><span>01/01</span>Informações</p>
+            </div>
+        </div>
+
+        <section class="card-list">
+            <div class="card pc">
+                <p id="informações1"></p>
+            </div>
+
+            <div class="card coffee">
+                <p id="informacoes2"></p>
+            </div>
+
+            <div class="card library">
+                <p id="informacoes3"></p>
+            </div>
+        </section>
+    </div>
+    <footer class="container-footer" id="footer">
+        <div class="footer-text">
+            <h2>@Kelvin G. Gomes</h2>
+        </div>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a target="_blank" href="https://github.com/kelvinsync"><img src="./SVG'S/github.svg" alt="Reddit"
+                            width="50px" height="50px"></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/kelvinsyn/"><img src="./SVG'S/instagram.png"
+                            alt="Instagram" width="50px" height="50px"></a></li>
+                <li><a target="_blank" href="https://www.facebook.com/kelvin.guimaraes.102/"><img
+                            src="./SVG'S/facebook.png" alt="Facebook" width="50px" height="50px"></a></li>
+                <li><a target="_blank" href="https://twitter.com/pizzaxvx"><img src="./SVG'S/twitter.png" alt="Twitter"
+                            width="50px" height="50px"></a></li>
+            </ul>
+        </nav>
+
+    </footer>
+</body>
+
+</html>
+<script>
+    var vt_musicas = [];
+
+    function adicionar() {
+        var addMusica = musica.value;
+        vt_musicas.push(addMusica);
+        musica.value = '';
+    }
+
+    function limpar() {
+
+        if (vt_musicas.length < 1) {
+            alert('Adiciona algum estilo musical antes de limpar!')
+        }
+        else {
+            for (var i = vt_musicas.length; i > 0; i--) {
+                vt_musicas.pop();
+            }
+        }
+    }
+
+    function cadastrar_estilo(estilo) {
+        var genero = vt_musicas[vt_musicas.length - 1];
+
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", genero);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO estilo (genero) VALUES ('${genero}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+</script>
